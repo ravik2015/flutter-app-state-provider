@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sample_provider/response_display.dart';
+import 'package:sample_provider/text_display.dart';
+import 'package:sample_provider/text_edit.dart';
 import 'app_state.dart';
 
 void main() => runApp(MyApp());
@@ -39,10 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(16.0),
         child: Center(
           child: ListView(
-            // mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
-              // TextDisplay(),
-              // TextEditWidget(),
+              TextDisplay(),
+              TextEditWidget(),
               RaisedButton(
                 onPressed: () => appState.fetchData(),
                 child: Text("Fetch Data from Network"),

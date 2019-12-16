@@ -15,7 +15,7 @@ class AppState with ChangeNotifier {
 
   void setDisplayText(String text) {
     _displayText = text;
-    notifyListeners();
+    notifyListeners(); // used to notify its listeners
   }
 
   String get getDisplayText => _displayText;
@@ -24,7 +24,7 @@ class AppState with ChangeNotifier {
 
   Future<void> fetchData() async {
     _isFetching = true;
-    notifyListeners();
+    notifyListeners(); // used to notify its listeners
 
     var response = await http.get(_dataUrl);
     if (response.statusCode == 200) {
@@ -32,7 +32,7 @@ class AppState with ChangeNotifier {
     }
 
     _isFetching = false;
-    notifyListeners();
+    notifyListeners(); // used to notify its listeners
   }
 
   String get getResponseText => _jsonResonse;
