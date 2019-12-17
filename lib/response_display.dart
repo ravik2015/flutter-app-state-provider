@@ -9,7 +9,6 @@ class ResponseDisplay extends StatelessWidget {
     return Container(
         padding: const EdgeInsets.all(16.0),
         child: Consumer<AppState>(
-          //<--- Consumer
           builder: (context, appState, child) {
             return Container(
                 child: appState.isFetching
@@ -35,28 +34,5 @@ class ResponseDisplay extends StatelessWidget {
                         : Text("Press Button above to fetch data"));
           },
         ));
-    // Container(
-    //   padding: const EdgeInsets.all(16.0),
-    //   child: appState.isFetching
-    //       ? CircularProgressIndicator()
-    //       : appState.getResponseJson() != null
-    //           ? ListView.builder(
-    //               primary: false,
-    //               shrinkWrap: true,
-    //               itemCount: appState.getResponseJson().length,
-    //               itemBuilder: (context, index) {
-    //                 return ListTile(
-    //                   leading: CircleAvatar(
-    //                     backgroundImage: NetworkImage(
-    //                         appState.getResponseJson()[index]['avatar']),
-    //                   ),
-    //                   title: Text(
-    //                     appState.getResponseJson()[index]["first_name"],
-    //                   ),
-    //                 );
-    //               },
-    //             )
-    //           : Text("Press Button above to fetch data"),
-    // );
   }
 }
